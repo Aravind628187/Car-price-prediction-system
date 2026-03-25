@@ -6,13 +6,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyButclCXMt_oXKnE2VaaG0PQu59rP7kkDk",
-  authDomain: "car-price-prediction-system.firebaseapp.com",
-  projectId: "car-price-prediction-system",
-  storageBucket: "car-price-prediction-system.firebasestorage.app",
-  messagingSenderId: "207875631619",
-  appId: "1:207875631619:web:b875fba196ad7889687c36",
-  measurementId: "G-LY8Y5HRTQ5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
