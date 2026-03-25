@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1772041889152,
+    "name": "Hyundai i20",
+    "year": "2025",
+    "km": "23222",
+    "owners": "1st Owner",
+    "price": "500000",
+    "images": []
+  },
+  {
+    "id": 1772120683696,
+    "name": "Hyundai i20",
+    "year": "2015",
+    "km": "232123",
+    "owners": "1st Owner",
+    "price": "500000",
+    "images": [
+      "uploads/1772120683675-lords-of-the-fallen-3840x2160-25282.jpg"
+    ]
+  }
+]
