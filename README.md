@@ -1,101 +1,178 @@
-# HUB Cars 🚙 - Smart Car Marketplace
+# HUB Cars 🚙 | AI-Powered Car Marketplace
 
-An enterprise-grade, full-stack web application designed for browsing, buying, and selling new and used cars. HUB Cars combines a sleek, premium user interface with a powerful Machine Learning price prediction engine to deliver a seamless automotive marketplace experience.
+HUB Cars is a full-stack automotive marketplace that enables users to seamlessly buy, sell, and discover new and used vehicles. Built with React, Node.js, Express, and Python, the platform combines a modern user experience with an intelligent Machine Learning pricing engine that helps sellers estimate accurate market values for their vehicles.
 
----
-
-## ✨ Key Features
-
-*   **Intelligent ML Price Prediction**: Sell your car with confidence. Our Python-based ML engine instantly calculates fair, good, excellent, and dealership prices based on make, model, year, kilometers driven, and condition.
-*   **Smart Auto-Expiring Listings**: When selling a used car, sellers can choose a precise listing duration (10 days or 20 days). Expired listings are automatically hidden to keep the marketplace fresh.
-*   **Dynamic Showroom Locator**: Browse new cars and instantly locate authorised showrooms nearby with a single click, thanks to our intelligent Google Maps integration.
-*   **Secure Authentication via JWT & bcrypt**: Fully protected and secure user registration and login flows. All users must be authenticated to access the marketplace.
-*   **Premium Visual Aesthetic**: A fully modernized, responsive React frontend sporting a professional dark corporate design system.
-*   **Robust File Uploads**: Integrated image uploads using Multer.
+Designed with scalability, security, and usability in mind, HUB Cars delivers a complete marketplace experience, from secure authentication and vehicle listing management to AI-powered price prediction and location-based showroom discovery.
 
 ---
 
-## 🛠️ Technology Stack
+## Features
 
-*   **Frontend Context**: React.js, Vite, React Router DOM, CSS3
-*   **Backend API**: Node.js, Express.js, Multer (Local File System Storage), JWT, bcrypt
-*   **Machine Learning Microservice**: Python 3, Flask, Scikit-learn, Pandas
+### AI-Powered Price Prediction
+
+Leverages a Python-based Machine Learning model to estimate vehicle prices using key attributes such as:
+
+* Brand and model
+* Manufacturing year
+* Kilometers driven
+* Vehicle condition
+
+The system generates multiple pricing ranges, including Fair Price, Good Price, Excellent Price, and Dealer Price estimates.
+
+### Vehicle Marketplace
+
+* Browse new and used cars
+* View detailed vehicle information
+* Upload vehicle images
+* Create and manage listings
+
+### Auto-Expiring Listings
+
+To maintain marketplace quality, sellers can choose listing durations of 10 or 20 days. Expired listings are automatically hidden from users.
+
+### Showroom Discovery
+
+Integrated with Google Maps to help users locate nearby authorized dealerships and showrooms directly from vehicle pages.
+
+### Secure Authentication
+
+* JWT-based authentication
+* Password hashing with bcrypt
+* Protected routes and user sessions
+
+### Responsive Modern UI
+
+* Built with React and Vite
+* Mobile-friendly responsive design
+* Professional dark-themed interface
+
+### File Upload Management
+
+Vehicle images are securely uploaded and managed using Multer.
 
 ---
 
-## 📁 System Architecture
+## Technology Stack
+
+### Frontend
+
+* React.js
+* Vite
+* React Router DOM
+* CSS3
+
+### Backend
+
+* Node.js
+* Express.js
+* JWT Authentication
+* bcrypt
+* Multer
+
+### Machine Learning Service
+
+* Python
+* Flask
+* Scikit-learn
+* Pandas
+* NumPy
+
+---
+
+## Project Structure
 
 ```text
 Car-price-prediction-system-main/
-├── backend/           # Node.js API (server.js, JSON datastores, auth routes)
-├── frontend/          # React.js UI (App.jsx, Vite configs, components)
-└── ml-service/        # Python Flask App (app.py, predict endpoints, scikit models)
+│
+├── frontend/          # React application
+├── backend/           # Express API and authentication services
+└── ml-service/        # Flask ML prediction service
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## Getting Started
 
 ### Prerequisites
-*   Node.js (v18+)
-*   Python (3.8+)
-*   Git
 
-To run the complete system locally, you will need to open **3 separate terminal windows**.
+* Node.js 18+
+* Python 3.8+
+* Git
 
-### 1. Start the Machine Learning Engine (Terminal 1)
-Serves the price prediction capabilities via Flask.
+### Run the ML Service
+
 ```bash
 cd ml-service
+
 python -m venv venv
-# On Windows use: .\venv\Scripts\activate
-# On Mac/Linux use: source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+
 pip install flask pandas scikit-learn flask-cors numpy joblib
+
 python app.py
 ```
-> The ML engine will start running on **http://localhost:8000**
 
-### 2. Start the Backend API Server (Terminal 2)
-Serves user authentication, data management, and file uploads.
+ML Service:
+http://localhost:8000
+
+### Run the Backend
+
 ```bash
 cd backend
+
 npm install
 npm start
 ```
-> The API server will start running on **http://localhost:5050**
 
-### 3. Start the Frontend Application (Terminal 3)
-Serves the primary highly-responsive React UI.
+Backend API:
+http://localhost:5050
+
+### Run the Frontend
+
 ```bash
 cd frontend
+
 npm install
 npm run dev
 ```
-> The UI will become accessible at **http://localhost:5173**
+
+Frontend:
+http://localhost:5173
 
 ---
 
-## 🔒 Environment Variables
+## Environment Variables
 
-No heavy database configuration is strictly required for local environments (the lightweight backend utilizes local JSON datastores for portability), but you can optionally configure paths.
+Create a `.env` file inside the `backend` directory:
 
-If needed, create a `.env` in the `backend/`:
 ```env
-JWT_SECRET=super_secret_jwt_key_hubcars
+JWT_SECRET=your_jwt_secret
 ML_ENDPOINT=http://localhost:8000/predict
 PORT=5050
 ```
 
 ---
 
-## 🤝 Contribution Guidelines
-1. Fork the repository.
-2. Create a targeted feature branch (`git checkout -b feature/ui-updates`).
-3. Commit your changes (`git commit -m 'Added dynamic showroom locator'`).
-4. Push to the branch and open a Pull Request.
+## Key Highlights
+
+* Full-stack architecture
+* AI-powered vehicle valuation
+* JWT-secured authentication
+* Image upload support
+* Google Maps integration
+* Auto-expiring marketplace listings
+* Responsive user interface
+* Microservice-based ML integration
 
 ---
 
-### **License**
-This project is licensed under the MIT License. 
-⭐ **Star this repository if you find it helpful!**
+## License
+
+Licensed under the MIT License.
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
